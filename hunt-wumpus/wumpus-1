@@ -1,11 +1,4 @@
 from random import choice
-import random
-
-cave_numbers = range(0,20)
-caves = []
-
-unvisited_caves = range(0, 20)
-visited_caves = [0]
 
 def create_tunnel(cave_from, cave_to):
     """ Create a tunnel between cave_from and cave_to. """
@@ -75,6 +68,17 @@ def get_next_location():
         return None
     else:
         return int(player_input)
+    
+cave_numbers = range(0,20)
+unvisited_caves = range(0,20)
+visited_caves = []
+visit_cave(0)
+
+caves = setup_caves(cave_numbers)
+print_caves()
+link_caves()
+print_caves()
+finish_caves()
     
 wumpus_location = choice(cave_numbers)
 wumpus_friend_location = choice(cave_numbers)
