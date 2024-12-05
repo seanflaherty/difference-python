@@ -58,14 +58,14 @@ dir2_file_list, dir2_root = directory_listing(directory2)
 
 for file_path in dir2_file_list.keys():
     if file_path not in dir1_file_list:
-        print file_path, "not found in directory 1"
+        print (file_path, "not found in directory 1")
 else:
-    print file_path, "found in directory 1 and 2"
+    print (file_path, "found in directory 1 and 2")
     file1 = os.path.join(dir1_root, file_path)
     file2 = os.path.join(dir2_root, file_path)
     if md5(file1) != md5(file2):
-        print file1, "and", file2, "differ!"
+        print (file1, "and", file2, "differ!")
     del dir1_file_list[file_path]
 
 for key, value in dir1_file_list.items():
-    print key, "not found in directory 2"
+    print (key, "not found in directory 2")
